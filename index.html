@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etuna Bekauri Portfolio</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            font-family: 'Playfair Display', serif;
+            background-color: #2E8B57; 
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif; 
+            color: #2E8B57; 
+        }
+
+        .project {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .project h2 {
+            margin-top: 0;
+        }
+
+        nav {
+            background-color: #2E8B57; 
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3CB371; 
+        }
+
+        @media screen and (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+        .banner-container {
+            position: relative;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+        }
+
+        .welcome-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #2E8B57;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: calc(33.33% - 10px); 
+            border-radius: 5px;
+        }
+
+        .banner {
+            display: none;
+        }
+
+        .banner.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EB Creations</h1>
+    <nav>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+    <div class="banner-container">
+        <img class="banner active" src="assets/Banner 1.JPG" alt="Banner Image 1">
+        <img class="banner" src="assets/Banner 2.JPG" alt="Banner Image 2">
+        <div class="welcome-message">Welcome to My Website!</div>
+    </div>
+</header>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.banner');
+
+    function showSlides() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            if (index === slideIndex) {
+                slide.classList.add('active');
+            }
+        });
+
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+    }
+
+    showSlides();
+    setInterval(showSlides, 3000); // Change image every 3 seconds
+</script>
+
+</body>
+</html>
